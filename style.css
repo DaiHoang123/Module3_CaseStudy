@@ -19,6 +19,7 @@ body{
 .btn-primary{
     background-color: #FC7600 !important;
     color: #FEFAFF !important;
+    border: none;
 }
 
 .btn-secondary{
@@ -167,10 +168,10 @@ nav {
     width: 100%;
 }
 
-#content{
-    height: 700px;
-    width: 100%;
-    background-color: #ccc;
+#content {
+    height: auto;
+    background-color: transparent;
+    padding: 20px 0;
 }
 
 .cart:hover{
@@ -208,4 +209,218 @@ nav {
 .carousel-control-prev{
     justify-content: flex-start;
     margin-left: 10px;
+}
+
+.card {
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+}
+
+.cart-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #FC7600;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.cart-item:hover {
+    background-color: #f8f9fa;
+}
+
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-right: 15px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.cart-item-details h6 {
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-item-details p {
+    margin: 0;
+    color: #FC7600;
+    font-weight: 500;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-item-quantity button {
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.cart-item-quantity span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.total-price span {
+    color: #FC7600;
+}
+
+.modal-content {
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #FFD400;
+    color: #333;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.modal-backdrop {
+    display: none !important;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.toast-container {
+    position: fixed;
+    top: 80px !important;
+    right: 20px !important;
+    z-index: 9999;
+}
+
+.toast {
+    background-color: white;
+    width: 300px !important;
+    max-width: 300px !important;
+    opacity: 0;
+    transform: translateX(100%);
+    word-wrap: break-word;
+}
+
+.toast-body {
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.toast.showing {
+    animation: slideIn 0.3s ease forwards;
+}
+
+.toast.hide {
+    animation: fadeOut 1s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.toast-header {
+    background-color: #28a745 !important;
+    color: white !important;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
 }

@@ -19,6 +19,17 @@
   </head>
 
   <body>
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999">
+      <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+          <strong class="me-auto">Thông báo</strong>
+          <button type="button" class="btn-close" data-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Thêm vào giỏ hàng thành công!
+        </div>
+      </div>
+    </div>
 
     <!-- Header -->
     <header id="header" class="bg-primary flex-center">
@@ -31,9 +42,34 @@
         <a href class="clear-a font-primary">Vivo</a>
       </nav>
       <div class="ultility flex-center">
-        <div class="flex-center cart">
-          <i class="fa-solid fa-cart-shopping font-primary"></i>
+        <div class="flex-center cart" onclick="toggleCart(event)">
+          <div class="cart-icon-container">
+            <i class="fa-solid fa-cart-shopping font-primary"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
           <p class="font-primary clear-p m-left-5">Giỏ hàng</p>
+        </div>
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" style="margin-top: 10%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Giỏ hàng của bạn</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="cartItems">
+                  <!-- Nội dung giỏ hàng sẽ được thêm vào đây -->
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="total-price">Tổng tiền: $<span id="totalPrice">0</span></div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="checkout()">Thanh toán</button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="flex-center user">
           <i class="fa-solid fa-circle-user font-primary"></i>
@@ -70,8 +106,10 @@
 
 
       <!-- Phone List -->
-      <div id="content" class="flex-center">
-        Danh sách điện thoại ở đây
+      <div id="content" class="container">
+        <div id="phonelist">
+          <!-- phoneList sẽ được render ở đây -->
+        </div>
       </div>
 
 
